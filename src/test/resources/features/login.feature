@@ -1,26 +1,26 @@
 Feature: Login
 
   @Login
-  Scenario: Успешный логин пользователя
-    Given Пользователь запускает браузер
-    When Пользователь открывает домашнюю страницу grace_bakery
-    And Пользователь нажимает на Login Link
-    And Пользователь вводит валидные данные
-    And Пользователь нажимает на кнопку Login
-    Then Пользователь проверяет отображение сообщения об успешном логине
-    And Пользователь закрывает браузер
+  Scenario: Successful user login
+    Given User launches the browser
+    When User opens the Home page grace_bakery
+    And The user clicks on Login Link
+    And The user enters valid data
+    And User clicks on a button Login
+    Then The user checks the display of successful login message
+    And User closes the browser
 
   @InvalidPassword
-  Scenario Outline: НЕуспешный логин пользователя
-    Given Пользователь запускает браузер
-    When Пользователь открывает домашнюю страницу grace_bakery
-    And Пользователь нажимает на Login Link
-    And Пользователь вводит валидный email и невалидный password
+  Scenario Outline: Unsuccessful user login
+    Given User launches the browser
+    When User opens the Home page grace_bakery
+    And The user clicks on Login Link
+    And The user enters valid email and invalid password
       | email   | password   |
       | <email> | <password> |
-    And Пользователь нажимает на кнопку Login
-    Then Пользователь проверяет отображение сообщения о неуспешном логине
-    And Пользователь закрывает браузер
+    And User clicks on a button Login
+    Then The user checks the display of unsuccessful login message
+    And User closes the browser
     Examples:
       | email             | password   |
       | test_qa@gmail.com | 11111 |
