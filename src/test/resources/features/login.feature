@@ -16,13 +16,11 @@ Feature: Login
     When User opens the Home page grace_bakery
     And The user clicks on Login Link
     And The user enters valid email and invalid password
-      | email   | password   |
-      | <email> | <password> |
+    Examples:
+      | email             | password |
+      | test_qa@gmail.com | 11111    |
+      | test_qa@gmail.com | 111      |
+      | test_qa@gmail.com |          |
     And User clicks on a button Login
     Then The user checks the display of unsuccessful login message
     And User closes the browser
-    Examples:
-      | email             | password   |
-      | test_qa@gmail.com | 11111 |
-      | test_qa@gmail.com | 111 |
-      | test_qa@gmail.com ||
